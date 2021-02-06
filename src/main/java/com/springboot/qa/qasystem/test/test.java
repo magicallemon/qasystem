@@ -13,20 +13,55 @@ public class test {
 
     public static void main(String[] args) {
 
-        Dog dog = new Dog();
-        dog.setName("狗");
-        dog.setLegCount(4);
-        dog.setBark("汪汪汪");
-
-        dog.call();
-        dog.eat();
-        dog.eat("鸡肉");
+        User user = null;
+        int num;
+        init(user);
+        user.setName("hhh");
+        System.out.println(user.name);
+        //Dog dog = new Dog();
+        //dog.setName("狗");
+        //dog.setLegCount(4);
+        //dog.setBark("汪汪汪");
+        //
+        //dog.call();
+        //dog.eat();
+        //dog.eat("鸡肉");
         /*Chicken chicken = new Chicken();
         chicken.setName("鸡");
         chicken.setLegCount(2);
         chicken.setCrow("喔喔喔");
         chicken.call();
         chicken.eat();*/
+    }
+
+    public test(){
+    }
+
+
+    static class User {
+        private int    id;
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+    }
+
+    public static void init(User user) {
+        user = new User();
+        user.setId(0);
     }
 
     public static class Animal {
@@ -38,9 +73,11 @@ public class test {
         public Animal() {
             System.out.println("执行主类构造");
         }
+
         static {
             System.out.println("执行主类静态代码");
         }
+
         {
             System.out.println("执行主类非静态代码");
         }
@@ -52,7 +89,8 @@ public class test {
         public void eat(String food) {
             System.out.println("我要吃" + food);
         }
-        public void eat(String food,String f) {
+
+        public void eat(String food, String f) {
             System.out.println("我要吃" + food);
         }
 
@@ -86,16 +124,20 @@ public class test {
         public Dog() {
             System.out.println("执行子类构造");
         }
+
         public Dog(String bark) {
             System.out.println("执行子类有参构造");
         }
+
         static {
             System.out.println("执行子类静态代码");
         }
+
         {
             System.out.println("执行子类非静态代码");
         }
 
+        @Override
         public void eat() {
             //super.eat();
             System.out.println("我吃肉。" + bark);
@@ -113,7 +155,7 @@ public class test {
     public static class Chicken extends Animal {
         //鸡鸣
         private String crow;
-
+        @Override
         public void eat() {
             super.eat();
             System.out.println("我吃米。" + crow);

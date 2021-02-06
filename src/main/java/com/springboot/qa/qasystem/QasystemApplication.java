@@ -5,8 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-
-@MapperScan("com.springboot.qa.qasystem.dao")
+@MapperScan("com.springboot.qa.qasystem.mapper")
 public class QasystemApplication {
 
     public static void main(String[] args) {

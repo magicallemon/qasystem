@@ -1,7 +1,3 @@
-/**
- * L
- * Copyright (c) 1991-2021 All Rights Reserved.
- */
 package com.springboot.qa.qasystem.test;
 
 import java.math.BigDecimal;
@@ -12,8 +8,17 @@ import java.math.BigDecimal;
  * @version : MathTest.java, v  2021年01月15日 15:31 L Exp $
  */
 public class MathTest {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         //checkNums(101, 200);
+        int x = 10;
+        do{
+            System.out.print("value of x : " + x );
+            x++;
+            if (x >15) {
+                continue;
+            }
+            System.out.print("\n");
+        }while( x < 20 );
     }
 
     //检查范围内的质数数量
